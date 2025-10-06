@@ -36,7 +36,7 @@ const CharacterV1 = ({
 
   return (
     <motion.span
-      className={cn("inline-block text-orange-500", isSpace && "w-4")}
+      className={cn("inline-block bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent", isSpace && "w-4")}
       style={{
         x,
         rotateX,
@@ -132,36 +132,34 @@ const Skiper31 = () => {
     target: targetRef,
   });
 
-  const text = "secure authentication made simple";
+  const text = "behavior is the new password";
   const characters = text.split("");
   const centerIndex = Math.floor((characters.length / 2));
 
   return (
-    <ReactLenis root>
-      <main className="w-full bg-white">
+    <main className="w-full bg-slate-950 overflow-x-hidden">
+      <div
+        ref={targetRef}
+        className="relative box-border flex h-[210vh] items-center justify-center gap-[2vw] bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 p-[2vw]"
+      >
         <div
-          ref={targetRef}
-          className="relative box-border flex h-[210vh] items-center justify-center gap-[2vw] bg-[#f5f4f3] p-[2vw]"
+          className="font-geist w-full max-w-6xl text-center text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tighter text-white px-4"
+          style={{
+            perspective: "500px",
+          }}
         >
-          <div
-            className="font-geist w-full max-w-6xl text-center text-4xl md:text-5xl lg:text-6xl font-bold uppercase tracking-tighter text-black px-4"
-            style={{
-              perspective: "500px",
-            }}
-          >
-            {characters.map((char, index) => (
-              <CharacterV1
-                key={index}
-                char={char}
-                index={index}
-                centerIndex={centerIndex}
-                scrollYProgress={scrollYProgress}
-              />
-            ))}
-          </div>
+          {characters.map((char, index) => (
+            <CharacterV1
+              key={index}
+              char={char}
+              index={index}
+              centerIndex={centerIndex}
+              scrollYProgress={scrollYProgress}
+            />
+          ))}
         </div>
-      </main>
-    </ReactLenis>
+      </div>
+    </main>
   );
 };
 
