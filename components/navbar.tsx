@@ -32,7 +32,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Initial animation
+      // Initial animation - slide down with fade
       gsap.from(navRef.current, {
         y: -100,
         opacity: 0,
@@ -57,13 +57,51 @@ export default function Navbar() {
   return (
     <header
       ref={navRef}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? "bg-slate-950/80 backdrop-blur-xl border-b border-slate-800/50 shadow-lg shadow-black/20"
-          : "bg-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 w-full transition-all duration-500 ease-out"
+      style={{ 
+        zIndex: 9999,
+        isolation: 'isolate',
+      }}
     >
-      <div className="container mx-auto px-4 md:px-6">
+      {/* Glassmorphism Background - Multiple layers for depth */}
+      <div 
+        className="absolute inset-0 transition-all duration-500"
+        style={{
+          background: isScrolled 
+            ? 'rgba(2, 6, 23, 0.8)'
+            : 'rgba(2, 6, 23, 0.5)',
+          backdropFilter: 'blur(16px) saturate(180%)',
+          WebkitBackdropFilter: 'blur(16px) saturate(180%)',
+        }}
+      />
+      
+      {/* Noise texture for glass realism */}
+      <div 
+        className="absolute inset-0 opacity-[0.015] pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
+        }}
+      />
+      
+      {/* Subtle gradient overlay for premium look */}
+      <div 
+        className="absolute inset-0 transition-opacity duration-500 pointer-events-none"
+        style={{
+          background: 'linear-gradient(90deg, rgba(59, 130, 246, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%)',
+          opacity: isScrolled ? 0.6 : 1,
+        }}
+      />
+      
+      {/* Border shimmer effect */}
+      <div 
+        className="absolute bottom-0 left-0 right-0 h-px transition-opacity duration-500 pointer-events-none"
+        style={{
+          background: 'linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.5), rgba(6, 182, 212, 0.5), transparent)',
+          opacity: isScrolled ? 1 : 0,
+        }}
+      />
+      
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="flex h-20 items-center justify-between gap-4">
           {/* Left side */}
           <div className="flex items-center gap-2">
@@ -102,7 +140,16 @@ export default function Navbar() {
                   </svg>
                 </Button>
               </PopoverTrigger>
-              <PopoverContent align="start" className="w-48 p-1 md:hidden bg-slate-900/95 backdrop-blur-xl border-slate-800">
+              <PopoverContent 
+                align="start" 
+                className="w-48 p-1 md:hidden border-slate-700/50" 
+                style={{ 
+                  zIndex: 10000,
+                  background: 'rgba(2, 6, 23, 0.95)',
+                  backdropFilter: 'blur(16px) saturate(180%)',
+                  WebkitBackdropFilter: 'blur(16px) saturate(180%)',
+                }}
+              >
                 <NavigationMenu className="max-w-none *:w-full">
                   <NavigationMenuList className="flex-col items-start gap-1">
                     {navigationLinks.map((link, index) => (
@@ -122,7 +169,10 @@ export default function Navbar() {
 
             {/* Main nav */}
             <div className="flex items-center gap-8">
-              <a href="#" className="text-white hover:text-blue-400 transition-colors duration-200">
+              <a 
+                href="#" 
+                className="text-white hover:text-blue-400 transition-colors duration-200 drop-shadow-[0_0_8px_rgba(59,130,246,0.3)]"
+              >
                 <Logo />
               </a>
 
@@ -133,9 +183,11 @@ export default function Navbar() {
                     <NavigationMenuItem key={index}>
                       <NavigationMenuLink
                         href={link.href}
-                        className="text-slate-300 hover:text-white px-4 py-2 font-medium transition-all duration-200 rounded-lg hover:bg-white/5"
+                        className="text-slate-200 hover:text-white px-4 py-2 font-medium transition-all duration-200 rounded-lg hover:bg-white/10 backdrop-blur-sm relative group"
                       >
                         {link.label}
+                        {/* Hover glow effect */}
+                        <span className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-500/0 via-cyan-500/0 to-blue-500/0 group-hover:from-blue-500/10 group-hover:via-cyan-500/10 group-hover:to-blue-500/10 transition-all duration-300" />
                       </NavigationMenuLink>
                     </NavigationMenuItem>
                   ))}
@@ -150,14 +202,14 @@ export default function Navbar() {
               asChild
               variant="ghost"
               size="sm"
-              className="text-sm text-slate-300 hover:text-white hover:bg-white/5"
+              className="text-sm text-slate-200 hover:text-white hover:bg-white/10 backdrop-blur-sm"
             >
               <a href="#">Sign In</a>
             </Button>
             <Button
               asChild
               size="sm"
-              className="text-sm bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 shadow-lg shadow-blue-500/20 transform hover:scale-105 transition-all duration-200"
+              className="text-sm bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transform hover:scale-105 transition-all duration-200 border border-blue-400/20"
             >
               <a href="#">Get Started</a>
             </Button>

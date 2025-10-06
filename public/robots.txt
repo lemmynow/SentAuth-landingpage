@@ -1,0 +1,9 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+Disallow: /api/
+Disallow: /signin
+Disallow: /admin/
+
+Sitemap: https://sentauth.com/sitemap.xml

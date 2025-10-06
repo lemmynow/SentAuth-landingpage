@@ -1,0 +1,189 @@
+/**
+ * Design Tokens for SentAuth
+ * Tech-Trust Palette (Default)
+ * All tokens follow a 4px base unit system
+ */
+
+:root {
+  /* ============================================
+     COLOR TOKENS - Tech-Trust Palette
+     ============================================ */
+  
+  /* Brand Colors */
+  --brand-deep: #0b1220;
+  --brand-base: #0f172a;
+  --accent-mint: #6CE5B6;
+  --accent-mint-hover: #5dd4a5;
+  --accent-mint-muted: rgba(108, 229, 182, 0.1);
+  
+  /* Backgrounds */
+  --bg-primary: #0b1220;
+  --bg-secondary: #0f172a;
+  --bg-tertiary: #1e293b;
+  --bg-elevated: #334155;
+  --bg-muted: #F7FAFC;
+  
+  /* Text Colors */
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-inverse: #0b1220;
+  
+  /* Borders */
+  --border-subtle: rgba(248, 250, 252, 0.1);
+  --border-medium: rgba(248, 250, 252, 0.2);
+  --border-strong: rgba(248, 250, 252, 0.3);
+  
+  /* Status Colors */
+  --status-success: #10b981;
+  --status-warning: #f59e0b;
+  --status-error: #ef4444;
+  --status-info: #3b82f6;
+  
+  /* ============================================
+     SPACING TOKENS (4px base unit)
+     ============================================ */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  --space-32: 8rem;     /* 128px */
+  
+  /* ============================================
+     TYPOGRAPHY TOKENS
+     ============================================ */
+  
+  /* Font Families */
+  --font-primary: 'Inter Variable', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  
+  /* Font Weights */
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+  
+  /* Font Sizes */
+  --fs-xs: 0.75rem;     /* 12px */
+  --fs-sm: 0.875rem;    /* 14px */
+  --fs-base: 1rem;      /* 16px */
+  --fs-lg: 1.125rem;    /* 18px */
+  --fs-xl: 1.25rem;     /* 20px */
+  --fs-2xl: 1.5rem;     /* 24px */
+  --fs-3xl: 1.875rem;   /* 30px */
+  --fs-4xl: 2.25rem;    /* 36px */
+  --fs-5xl: 3rem;       /* 48px */
+  --fs-6xl: 3.75rem;    /* 60px */
+  --fs-display: 4.5rem; /* 72px */
+  
+  /* Line Heights */
+  --lh-tight: 1.2;
+  --lh-snug: 1.375;
+  --lh-normal: 1.5;
+  --lh-relaxed: 1.625;
+  --lh-loose: 2;
+  
+  /* Letter Spacing */
+  --ls-tight: -0.02em;
+  --ls-normal: 0;
+  --ls-wide: 0.02em;
+  
+  /* ============================================
+     RADIUS TOKENS
+     ============================================ */
+  --radius-xs: 0.25rem;  /* 4px */
+  --radius-sm: 0.375rem; /* 6px */
+  --radius-md: 0.5rem;   /* 8px */
+  --radius-lg: 0.75rem;  /* 12px */
+  --radius-xl: 1rem;     /* 16px */
+  --radius-2xl: 1.5rem;  /* 24px */
+  --radius-full: 9999px;
+  
+  /* ============================================
+     SHADOW TOKENS
+     ============================================ */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-glow: 0 0 20px rgba(108, 229, 182, 0.3);
+  --shadow-glow-strong: 0 0 40px rgba(108, 229, 182, 0.5);
+  
+  /* ============================================
+     Z-INDEX SCALE
+     ============================================ */
+  --z-base: 0;
+  --z-dropdown: 1000;
+  --z-sticky: 1100;
+  --z-fixed: 1200;
+  --z-modal-backdrop: 1300;
+  --z-modal: 1400;
+  --z-popover: 1500;
+  --z-tooltip: 1600;
+  
+  /* ============================================
+     ANIMATION TOKENS
+     ============================================ */
+  --duration-fast: 150ms;
+  --duration-base: 300ms;
+  --duration-slow: 500ms;
+  --duration-slower: 700ms;
+  
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-custom: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ============================================
+   ALTERNATIVE PALETTES (for A/B testing)
+   ============================================ */
+
+/* Night-Analyst Palette */
+[data-theme="night-analyst"] {
+  --brand-deep: #081229;
+  --brand-base: #0f172a;
+  --accent-mint: #7C5CFF;
+  --accent-mint-hover: #6a4de6;
+  --accent-mint-muted: rgba(124, 92, 255, 0.1);
+  --bg-primary: #081229;
+  --bg-secondary: #0F1724;
+  --shadow-glow: 0 0 20px rgba(124, 92, 255, 0.3);
+  --shadow-glow-strong: 0 0 40px rgba(124, 92, 255, 0.5);
+}
+
+/* Clean-Modern Palette */
+[data-theme="clean-modern"] {
+  --brand-deep: #0F172A;
+  --brand-base: #1e293b;
+  --accent-mint: #FF6B6B;
+  --accent-mint-hover: #ff5252;
+  --accent-mint-muted: rgba(255, 107, 107, 0.1);
+  --bg-primary: #0F172A;
+  --bg-muted: #F8FAFC;
+  --shadow-glow: 0 0 20px rgba(255, 107, 107, 0.3);
+  --shadow-glow-strong: 0 0 40px rgba(255, 107, 107, 0.5);
+}
+
+/* ============================================
+   ACCESSIBILITY - Reduced Motion
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+    --duration-slow: 0ms;
+    --duration-slower: 0ms;
+  }
+}

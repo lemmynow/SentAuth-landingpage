@@ -1,0 +1,122 @@
+{
+  "experiments": [
+    {
+      "id": "hero_headline_test",
+      "name": "Hero Headline Variation Test",
+      "description": "Test different headline approaches to optimize conversion",
+      "status": "active",
+      "traffic_split": {
+        "variant_1": 0.34,
+        "variant_2": 0.33,
+        "variant_3": 0.33
+      },
+      "variants": [
+        {
+          "id": "variant_1",
+          "name": "Direct Benefit",
+          "headline": "Stop guessing. Start knowing.",
+          "subheadline": "SentAuth analyzes patterns, habits and device signals to stop account takeover and fraud early.",
+          "cta": "Get started — free",
+          "layout": "primary"
+        },
+        {
+          "id": "variant_2",
+          "name": "Feature Focused",
+          "headline": "Behavioral identity for real security.",
+          "subheadline": "Protect accounts with behavior-driven signals that adapt to real users, not passwords.",
+          "cta": "Request a demo",
+          "layout": "primary"
+        },
+        {
+          "id": "variant_3",
+          "name": "Problem Awareness",
+          "headline": "Detect threats from how users move — not just what they enter.",
+          "subheadline": "SentAuth analyzes patterns, habits and device signals to stop account takeover and fraud early.",
+          "cta": "See it in action",
+          "layout": "alternate"
+        }
+      ],
+      "metrics": {
+        "primary": "signup_clicked",
+        "secondary": ["time_on_page", "scroll_depth", "demo_requested"]
+      }
+    },
+    {
+      "id": "pricing_display_test",
+      "name": "Pricing Display Optimization",
+      "description": "Test monthly vs. annual default display",
+      "status": "draft",
+      "traffic_split": {
+        "monthly_default": 0.5,
+        "annual_default": 0.5
+      },
+      "variants": [
+        {
+          "id": "monthly_default",
+          "name": "Monthly Pricing Default",
+          "default_billing": "monthly"
+        },
+        {
+          "id": "annual_default",
+          "name": "Annual Pricing Default (with savings)",
+          "default_billing": "annual"
+        }
+      ],
+      "metrics": {
+        "primary": "plan_selected",
+        "secondary": ["annual_conversion_rate", "average_order_value"]
+      }
+    },
+    {
+      "id": "color_palette_test",
+      "name": "Brand Color Palette Test",
+      "description": "Test different color palettes for conversion impact",
+      "status": "planned",
+      "traffic_split": {
+        "tech_trust": 0.4,
+        "night_analyst": 0.3,
+        "clean_modern": 0.3
+      },
+      "variants": [
+        {
+          "id": "tech_trust",
+          "name": "Tech-Trust (Default)",
+          "theme": "tech-trust",
+          "colors": {
+            "brand": "#0b1220",
+            "accent": "#6CE5B6"
+          }
+        },
+        {
+          "id": "night_analyst",
+          "name": "Night-Analyst",
+          "theme": "night-analyst",
+          "colors": {
+            "brand": "#081229",
+            "accent": "#7C5CFF"
+          }
+        },
+        {
+          "id": "clean_modern",
+          "name": "Clean-Modern",
+          "theme": "clean-modern",
+          "colors": {
+            "brand": "#0F172A",
+            "accent": "#FF6B6B"
+          }
+        }
+      ],
+      "metrics": {
+        "primary": "signup_clicked",
+        "secondary": ["bounce_rate", "engagement_score"]
+      }
+    }
+  ],
+  "implementation_notes": {
+    "framework": "Next.js with client-side variant selection",
+    "storage": "localStorage for variant persistence",
+    "analytics": "Fire events to analytics provider with variant metadata",
+    "traffic_assignment": "Hash userId or sessionId for consistent experience",
+    "example_usage": "Use experiment.json to dynamically select Hero component props based on assigned variant"
+  }
+}
