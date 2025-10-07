@@ -2,7 +2,6 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import UnionSvg from "@/public/Union.svg";
 
 export default function SentAuthLogo() {
   return (
@@ -25,10 +24,12 @@ export default function SentAuthLogo() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <UnionSvg
-            className="w-full h-full object-contain"
+          <img
+            src="/Union.svg"
+            alt="SentAuth"
             width={40}
             height={40}
+            className="w-full h-full object-contain"
           />
         </motion.div>
       </div>
