@@ -67,7 +67,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <Logo size="md" animated={false} />
+            <Logo />
             <p className="mt-4 text-text-muted max-w-xs leading-relaxed">
               Your users aren't just passwords. They're patterns, behaviors, habits. 
               We analyze the way they move to keep them safe.

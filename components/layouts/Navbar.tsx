@@ -125,7 +125,7 @@ const Navbar: React.FC<NavbarProps> = ({ className }) => {
               className="focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg"
               aria-label="SentAuth home"
             >
-              <Logo size="md" animated={false} />
+              <Logo />
             </Link>
 
             {/* Desktop Navigation */}
