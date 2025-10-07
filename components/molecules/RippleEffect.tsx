@@ -59,10 +59,10 @@ const BehavioralRipple: React.FC<BehavioralRippleProps> = ({
         >
           <div
             className="font-bold font-display text-transparent text-5xl sm:text-6xl lg:text-7xl tracking-tight"
-            style={{
+            style={{  
               letterSpacing: '-0.02em',
-              WebkitTextStroke: '4px rgba(108, 229, 182, 0.6)',
-              filter: 'drop-shadow(0 0 8px rgba(108, 229, 182, 0.5)) drop-shadow(0 0 20px rgba(108, 229, 182, 0.3))',
+              WebkitTextStroke: '4.5px rgba(100, 40, 76, 0.7)',
+              filter: 'drop-shadow(0 0 8px rgba(100, 40, 76, 0.5)) drop-shadow(0 0 20px rgba(64, 82, 118, 0.3))',
             }}
           >
             {text}

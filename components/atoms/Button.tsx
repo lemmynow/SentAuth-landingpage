@@ -84,6 +84,11 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       className,
       children,
       type = 'button',
+      onClick,
+      onAnimationStart,
+      onDragStart,
+      onDragEnd,
+      onDrag,
       ...props
     },
     ref
@@ -95,6 +100,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         type={type}
         disabled={disabled || isLoading}
+        onClick={onClick}
         className={cn(
           'inline-flex items-center justify-center',
           'font-sans leading-none',
@@ -110,7 +116,6 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         whileHover={!disabled && !isLoading ? 'hover' : undefined}
         whileTap={!disabled && !isLoading ? 'tap' : undefined}
         aria-busy={isLoading}
-        {...props}
       >
         {/* Loading Spinner */}
         {isLoading && (
