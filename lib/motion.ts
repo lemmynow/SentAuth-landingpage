@@ -138,18 +138,6 @@ export const letterReveal: Variants = {
 };
 
 /**
- * Tracking animation (letter-spacing interpolation)
- */
-export const trackingExpand = (from: string = '0.2em', to: string = '0em'): Transition => ({
-  letterSpacing: {
-    from,
-    to,
-    duration: duration.slow,
-    ease: easing.sentauth,
-  },
-});
-
-/**
  * Card tilt on hover (3D perspective effect)
  */
 export const cardTilt = {
