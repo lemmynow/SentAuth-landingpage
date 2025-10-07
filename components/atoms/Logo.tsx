@@ -25,7 +25,7 @@ export default function SentAuthLogo() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <img
-            src="/Union.svg"
+            src="/Union.png"
             alt="SentAuth"
             width={40}
             height={40}
