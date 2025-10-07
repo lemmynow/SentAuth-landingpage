@@ -10,7 +10,7 @@ export default function SentAuthLogo() {
       animate={{ scale: [1, 1.01, 1], opacity: [1, 0.98, 1] }}
       transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
     >
-      {/* Your custom Union.png logo */}
+      {/* Your custom Union.svg logo */}
       <div className="relative h-10">
         <motion.div
           className="absolute inset-0 rounded-lg opacity-20 blur-md"
@@ -25,7 +25,7 @@ export default function SentAuthLogo() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <img
-            src="/Union.png"
+            src="/Union.svg"
             alt="SentAuth"
             height={40}
             className="h-full w-auto object-contain"
